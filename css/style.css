@@ -1,0 +1,232 @@
+@import url("barkentina.css");
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+background-color: rgba(88, 131, 84, 0.647);
+font-family: 'Barkentina';
+background-image: url(../img/bc.png);
+background-repeat: repeat;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 10px auto;
+   position: relative;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header header"
+                         "main nav"
+                         "footer footer";
+    gap: 5px;
+}
+
+img{
+    max-width: 100%;
+}
+
+header{
+    text-align: center;
+    padding: 10px 20px;
+    background-color: rgb(92, 197, 117);
+    grid-area: header;
+}
+
+header em{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.wrapper p, h1, h2 {
+    padding: 10px 20px;
+}
+
+nav{
+    text-align: center;
+    grid-area: nav;
+}
+.navigation{
+    position: sticky;
+    top: 10px;
+}
+
+
+nav h1{
+    display: block;
+    background-color: rgb(243, 121, 0);
+    text-align: center;
+    font-style: oblique;
+    letter-spacing: 10px;
+    border: 5px solid rgb(215, 108, 20);
+    text-shadow: rgb(253, 236, 0) 5px 3px 5px;
+}
+
+nav a{
+    text-decoration: none;
+    background-color: rgba(245, 98, 0, 0.636);
+    color: black;
+    padding: 0 3px;
+}
+
+
+nav a:hover{
+  background-color:  rgba(155, 202, 170, 0.7);
+  border-radius: 10px;
+  color: green;
+  transition: 0.4s;
+}
+
+nav li{
+    display: inline-block;
+    list-style: none;
+    padding: 5px 0;
+}
+
+.nav1{
+    background-color: rgb(231, 255, 0);
+}
+.nav2{
+    background-color: rgb(231, 235, 6);
+}
+.nav3{
+    background-color: rgb(231, 215, 6);
+}
+.nav4{
+    background-color: rgb(231, 195, 6);
+}
+.nav5{
+    background-color: rgb(231, 175, 6);
+}
+nav li:nth-child(odd){
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+main{
+    grid-area: main;
+    background-color: rgb(155, 202, 170);
+}
+main h2{
+    display: block;
+    text-align: center;
+    background-color: rgb(15, 102, 14);
+    border: 2px solid black;
+}
+article:nth-child(even){
+    background-color: rgba(153, 255, 144, 0.427);
+}
+article:nth-child(odd){
+    background-color: rgba(19, 185, 4, 0.286);
+}
+
+
+.note{
+    display: inline-block;
+    outline: 1px solid black;
+    padding: 0 5px;
+}
+
+.note:hover{
+    background-color: #fff;
+    color: red;
+}
+
+footer{
+    grid-area: footer;
+    text-align: center;
+    height: 150px;
+    position: relative;
+    background-color: rgba(254, 254, 0, 0.853);
+}
+
+.footer a{
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgb(24, 129, 0);
+    border-radius: 50%;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 15px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.footer a:hover{
+    background-color: rgba(238, 169, 32, 0.705);
+    transition: 0.4s;
+}
+
+
+.form{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(245, 110, 7);
+   position: absolute;
+   bottom: 0;
+   padding: 10px;
+}
+.form input{
+    padding: 5px;
+    background-color: #fff;
+    outline: none;
+}
+.form input::placeholder{
+    color: rgb(107, 3, 171);
+    font-weight: bold;
+}
+.form input[type="submit"]{
+    color: rgb(246, 255, 0);
+    border-radius: 50%;
+    background-color: #000;
+    margin-left: 25px;
+}
+.form input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+}
+
+
+@media (max-width:320px) {
+    .wrapper{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "header"
+                             "main"
+                             "footer";
+        gap: 5px;
+    }
+   
+    nav{
+        display: none;
+    }
+    footer{
+        height: 250px;
+    }
+    .footer a{
+        top: 15%;
+    }
+    .form input{
+        display: flex;
+        margin: 5px;
+    }
+    .form input[type="submit"]{
+       margin: 0 auto;
+    }
+}
